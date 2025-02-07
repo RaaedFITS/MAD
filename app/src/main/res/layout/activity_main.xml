@@ -7,68 +7,62 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="413dp"
-        android:layout_height="448dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/images" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/landing_image" />
 
     <Button
         android:id="@+id/getstarted_btn"
-        android:layout_width="265dp"
-        android:layout_height="54dp"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/search_bar"
+        android:backgroundTint="@color/blue"
         android:text="Get Started"
-        android:textSize="16dp"
-        android:background="#0c1145"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="414dp"
-        android:layout_height="359dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="4dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bottom_white" />
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_marginBottom="220dp"
-        android:gravity="center"
+        android:layout_width="391dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="200dp"
+
+        android:gravity="start"
         android:padding="8dp"
-        android:text="WELCOME TO AIRBUDDY"
-        android:textSize="28dp"
-        android:textStyle="bold|italic"
+        android:text="Let's make your dream Vacation with AirBuddy"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold|normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_marginBottom="136dp"
+        android:layout_width="356dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="140dp"
         android:gravity="center"
-        android:text="Find unique stays and connect with local host. \n Explore expeiences that make every tip unfogettable with AirBuddy"
+        android:text="Lives without limits , explore the beauty of Sri Lanka"
+        android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
