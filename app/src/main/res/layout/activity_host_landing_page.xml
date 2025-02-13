@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".host_landing_page">
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="311dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:text="It's easy to get\nstarted on AirBuddy"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="347dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="156dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="1. Tell us about your place"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="347dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="484dp"
+        android:text="3. Finish up and publish"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="175dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="516dp"
+        android:text="Choose a starting price , verify few details then publish your stay"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="347dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="320dp"
+        android:text="2. Make it stand out"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="177dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="352dp"
+        android:text="Add a photo with a little title"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="177dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="188dp"
+        android:text="Share some basic info, where it is and how many guest can stay"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/proceedButton"
+        android:layout_width="309dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="52dp"
+        android:text="Get Started"
+        android:textColor="@color/white"
+        android:background="@drawable/search_bar"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="148dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="40dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/house" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="148dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="352dp"
+        android:layout_marginEnd="36dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/room" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="148dp"
+        android:layout_height="86dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="188dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bungaloww" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

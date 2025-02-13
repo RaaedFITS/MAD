@@ -1,207 +1,448 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- A modern profile screen with collapsible sections and a user type selector -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer_profile">
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="232dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="80dp"
-        android:text="Shane Fernando"
-        android:textSize="20dp"
-        android:paddingLeft="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- AppBar with a collapsing header -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="130dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Profile"
-        android:textColor="@color/black"
-        android:textSize="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_pic" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="124dp"
-        android:text="+"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="347dp"
-        android:layout_height="331dp"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814">
-
-        <ImageView
-            android:id="@+id/imageView21"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
-            android:layout_height="320dp" />
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            app:titleEnabled="false">
 
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="119dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="280dp"
-            android:background="@drawable/search_bar"
-            android:backgroundTint="@color/blue"
-            android:text="Save"
-            android:textColor="@color/white"
-            android:textSize="14dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <!-- Header background image -->
+            <ImageView
+                android:id="@+id/headerImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                android:src="@drawable/landing_image" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            <!-- Toolbar (pinned) -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable main content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:text="Username"
-            android:textSize="16dp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="75dp"
-            android:text="Password"
-            android:textSize="16dp" />
+            <!-- Profile image and user name -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/user_pic"
+                android:contentDescription="Profile Picture" />
 
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="125dp"
-            android:text="Email"
-            android:textSize="16dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Shane Fernando"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="175dp"
-            android:text="ID No"
-            android:textSize="16dp" />
+            <!-- Personal Information Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPersonalInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Section header -->
+                    <LinearLayout
+                        android:id="@+id/headerPersonalInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Personal Information"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                        <ImageView
+                            android:id="@+id/arrowPersonalInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/expand_more" />
+                    </LinearLayout>
+                    <!-- Section content (initially hidden) -->
+                    <LinearLayout
+                        android:id="@+id/contentPersonalInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <!-- Username -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Username" />
+                        <EditText
+                            android:id="@+id/editTextUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter username" />
+                        <!-- Email -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:layout_marginTop="8dp" />
+                        <EditText
+                            android:id="@+id/editTextEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter email" />
+                        <!-- Password -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Password"
+                            android:layout_marginTop="8dp" />
+                        <EditText
+                            android:id="@+id/editTextPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter password"
+                            android:inputType="textPassword" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="225dp"
-            android:text="Mobile "
-            android:textSize="16dp" />
+            <!-- User Type Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardUserType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User Type"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                    <RadioGroup
+                        android:id="@+id/radioGroupUserType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+                        <RadioButton
+                            android:id="@+id/radioCustomer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer"
+                            android:checked="true" />
+                        <RadioButton
+                            android:id="@+id/radioHost"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Host"
+                            android:layout_marginStart="24dp" />
+                    </RadioGroup>
+                    <!-- Host-specific details; initially hidden -->
+                    <LinearLayout
+                        android:id="@+id/hostDetailsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Host Description" />
+                        <EditText
+                            android:id="@+id/editTextHostDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter host description" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="107dp"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="18dp"
+            <!-- Login & Security Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLoginSecurity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Section header -->
+                    <LinearLayout
+                        android:id="@+id/headerLoginSecurity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Login and Security"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                        <ImageView
+                            android:id="@+id/arrowLoginSecurity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/expand_more" />
+                    </LinearLayout>
+                    <!-- Section content (initially hidden) -->
+                    <LinearLayout
+                        android:id="@+id/contentLoginSecurity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Two-Factor Authentication: Disabled" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Last login: Jan 1, 2025" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <!-- Payment & Payouts Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPaymentPayouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Section header -->
+                    <LinearLayout
+                        android:id="@+id/headerPaymentPayouts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Payment and Payouts"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                        <ImageView
+                            android:id="@+id/arrowPaymentPayouts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/expand_more" />
+                    </LinearLayout>
+                    <!-- Section content (initially hidden) -->
+                    <LinearLayout
+                        android:id="@+id/contentPaymentPayouts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bank Account:"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                        <EditText
+                            android:id="@+id/editTextBankAccount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter bank account details" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Payout Method:"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                        <EditText
+                            android:id="@+id/editTextPayoutMethod"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter payout method" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <EditText
-            android:id="@+id/editTextTextPassword4"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="65dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="18dp"
+            <!-- Accessibility Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAccessibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Section header -->
+                    <LinearLayout
+                        android:id="@+id/headerAccessibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Accessibility"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+                        <ImageView
+                            android:id="@+id/arrowAccessibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/expand_more" />
+                    </LinearLayout>
+                    <!-- Section content (initially hidden) -->
+                    <LinearLayout
+                        android:id="@+id/contentAccessibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Text Size:"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                        <EditText
+                            android:id="@+id/editTextTextSize"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter preferred text size" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Contrast:"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                        <EditText
+                            android:id="@+id/editTextContrast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter contrast level" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/hostButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Manage Hosting"
+                android:textSize="20sp"
+                android:visibility="gone"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            <!-- Save Changes Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="Save Changes"
+                android:textSize="20sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
-        <EditText
-            android:id="@+id/editTextTextPassword5"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="115dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="18dp"
-
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/editTextTextPassword6"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="165dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="18dp"
-
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/editTextTextPassword7"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginStart="105dp"
-            android:layout_marginTop="215dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="18dp"
-
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView43"
-        android:layout_width="125dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="240dp"
-        android:text="Account details"
-        android:textSize="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <!-- Add this Button inside your main LinearLayout in activity_customer_profile.xml -->
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

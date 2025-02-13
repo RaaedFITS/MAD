@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".host_select_page">
+
+    <!-- Bottom "Go" button (optional usage) -->
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="309dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/search_bar"
+        android:backgroundTint="@color/blue"
+        android:text="go"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- Title text -->
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="311dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:text="Which of these best\ndescribe your place?"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Existing Categories (Row 1) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardHome"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="200dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/home" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Home"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardApartment"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="200dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/apartment" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Apartment"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Existing Categories (Row 2) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardVehicle"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="400dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/vehicle" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="21dp"
+            android:text="vehicle"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardVan"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="416dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/campervan" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="21dp"
+            android:text="Campervan / RV"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- New Categories (Row 3) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBeach"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="540dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewBeach"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/beachicon" />
+
+        <TextView
+            android:id="@+id/textViewBeach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Beaches"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTemple"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="540dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewTemple"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/temple" />
+
+        <TextView
+            android:id="@+id/textViewTemple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Temples"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- New Categories (Row 4) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRuins"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="664dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewRuins"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/ruine" />
+
+        <TextView
+            android:id="@+id/textViewRuins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Ruins"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardForest"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="664dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewForest"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/forest" />
+
+        <TextView
+            android:id="@+id/textViewForest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Forest"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- New Categories (Row 5) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMountain"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="788dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewMountain"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/mountain" />
+
+        <TextView
+            android:id="@+id/textViewMountain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Mountain"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardVehicles"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="788dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewVehicles"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/vehicle" />
+
+        <TextView
+            android:id="@+id/textViewVehicles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Vehicles"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- New Category (Row 6 - single item) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardGuestHouse"
+        android:layout_width="165dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="912dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewGuestHouse"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/home" />
+
+        <TextView
+            android:id="@+id/textViewGuestHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Guest House"
+            android:textSize="16dp" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

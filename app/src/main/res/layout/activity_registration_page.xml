@@ -23,13 +23,14 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="255dp"
-            android:layout_height="62dp"
+            android:layout_width="257dp"
+            android:layout_height="65dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="Create new account"
-            android:textSize="23dp"
+            android:textColor="@color/black"
+            android:textSize="25dp"
             android:textStyle="bold" />
 
         <TextView
@@ -39,6 +40,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="150dp"
             android:text="Email"
+            android:textColor="@color/black"
             android:textSize="18dp" />
 
         <TextView
@@ -48,6 +50,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="250dp"
             android:text="Username"
+            android:textColor="@color/black"
             android:textSize="18dp" />
 
         <TextView
@@ -57,6 +60,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="350dp"
             android:text="Password"
+            android:textColor="@color/black"
             android:textSize="18dp" />
 
         <TextView
@@ -65,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="453dp"
+            android:textColor="@color/black"
             android:text="Upload Picture"
             android:textSize="18dp" />
 
@@ -75,9 +80,9 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="178dp"
             android:ems="10"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
             android:textSize="18dp"
-
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <EditText
@@ -87,9 +92,9 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="278dp"
             android:ems="10"
-            android:inputType="textPassword"
+            android:inputType="text"
+            android:textColor="@color/black"
             android:textSize="18dp"
-
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <EditText
@@ -100,8 +105,8 @@
             android:layout_marginTop="379dp"
             android:ems="10"
             android:inputType="textPassword"
+            android:textColor="@color/black"
             android:textSize="18dp"
-
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <Button
@@ -126,8 +131,34 @@
             android:layout_marginEnd="87dp"
             android:layout_marginBottom="41dp"
             android:gravity="center"
+            android:textColor="@color/black"
             android:text="Already have an account? Login"
             android:textSize="15dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="64dp"
+            android:layout_height="63dp"
+            app:cardCornerRadius="40dp"
+            android:layout_marginTop="495dp"
+            android:layout_marginStart="35dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/user_pic" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="495dp"
+            android:background="@drawable/search_bar"
+            android:text="Upload here "
+            android:textSize="13dp"
+            tools:ignore="TouchTargetSizeCheck" />
     </androidx.cardview.widget.CardView>
 
 

@@ -13,6 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MadProject"
         tools:targetApi="31">
+        <activity android:name=".ManageHostingActivity" />
+        <activity
+            android:name=".host_page_last"
+            android:exported="false" />
+        <activity
+            android:name=".host_select_page"
+            android:exported="false" />
+        <activity
+            android:name=".host_landing_page"
+            android:exported="false" />
         <activity
             android:name=".customer_profile"
             android:exported="false" />

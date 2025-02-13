@@ -5,13 +5,17 @@
       <map>
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/buttons_frame.xml" value="0.3635" />
+        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2555" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2555" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/password_frame.xml" value="0.2545" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/radius.xml" value="0.3635" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/search_bar.xml" value="0.1785" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/drawable/whitebackg.xml" value="0.3625" />
-        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_customer_profile.xml" value="0.4" />
+        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_customer_profile.xml" value="0.2" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_dashboard_page.xml" value="0.2" />
+        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_host_landing_page.xml" value="0.176" />
+        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_host_page_last.xml" value="0.2" />
+        <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_host_select_page.xml" value="0.2" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_login_page.xml" value="0.2" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/dfern/AndroidStudioProjects/madProject/app/src/main/res/layout/activity_registration_page.xml" value="0.2" />
@@ -19,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
