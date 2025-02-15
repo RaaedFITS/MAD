@@ -1,12 +1,12 @@
 package com.example.madproject
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.madproject.R
 
 class TravelLocationAdapter(
     private val locationList: List<TravelLocation>
@@ -21,6 +21,19 @@ class TravelLocationAdapter(
     override fun onBindViewHolder(holder: TravelLocationViewHolder, position: Int) {
         val currentLocation = locationList[position]
         holder.bind(currentLocation)
+        holder.itemView.setOnClickListener {
+            // Create an Intent to start the detail activity
+            val context = holder.itemView.context
+            val intent = Intent(context, v_scroll_dash::class.java)
+            // Pass all needed details as extras
+            intent.putExtra("placeId", currentLocation.id)
+            intent.putExtra("category", currentLocation.category)
+            intent.putExtra("locationName", currentLocation.locationName)
+            intent.putExtra("description", currentLocation.description)
+            intent.putExtra("price", currentLocation.price) // Make sure TravelLocation has a price field
+            intent.putExtra("imageRes", currentLocation.imageRes)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = locationList.size
@@ -36,6 +49,10 @@ class TravelLocationAdapter(
             tvLocationName.text = travelLocation.locationName
             tvDescription.text = travelLocation.description
             tvRating.text = "Ratings: ${travelLocation.rating}"
+            // Optionally, set an image if your layout has an ImageView (ivPlaceImage)
+            if (travelLocation.imageRes != 0) {
+                ivPlaceImage.setImageResource(travelLocation.imageRes)
+            }
         }
     }
 }

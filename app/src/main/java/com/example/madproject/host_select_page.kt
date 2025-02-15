@@ -3,6 +3,7 @@ package com.example.madproject
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 
 class host_select_page : AppCompatActivity() {
@@ -10,6 +11,12 @@ class host_select_page : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_host_select_page)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""  // This explicitly sets the ActionBar title to empty
+        toolbar.setNavigationOnClickListener { onBackPressed() }
 
         // Retrieve the current user's key (if needed)
         val userKey = intent.getStringExtra("userKey") ?: ""

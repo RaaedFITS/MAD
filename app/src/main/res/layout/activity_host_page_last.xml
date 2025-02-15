@@ -8,12 +8,20 @@
     android:layout_height="match_parent"
     tools:context=".host_page_last">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
     <!-- Header TextView -->
     <TextView
         android:id="@+id/textView56"
         android:layout_width="311dp"
         android:layout_height="73dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="55dp"
         android:text="What type of place will the guest have?"
         android:textColor="@color/black"
         android:textSize="26dp"
@@ -122,6 +130,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextLocation" />
+
+    <!-- EditText for Price -->
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/search_bar"
+        android:hint="Enter price"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextDescription" />
 
     <!-- Save Place Button -->
     <androidx.appcompat.widget.AppCompatButton

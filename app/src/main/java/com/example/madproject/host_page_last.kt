@@ -2,11 +2,13 @@ package com.example.madproject
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.firebase.FirebaseApp
@@ -16,13 +18,19 @@ class host_page_last : AppCompatActivity() {
 
     // This will store the second-step place type (entire place / room / shared bed).
     private var selectedPlaceType: String = ""
-
     // This will store the category from the previous screen (Apartment, Home, Beaches, etc.).
     private var mainCategory: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_host_page_last)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""  // This explicitly sets the ActionBar title to empty
+        toolbar.setNavigationOnClickListener { onBackPressed() }
+
         FirebaseApp.initializeApp(this)
 
         // Retrieve extras from the intent
@@ -58,45 +66,56 @@ class host_page_last : AppCompatActivity() {
             textViewPlaceType.text = "Category: $mainCategory\nSelected Type: $selectedPlaceType"
         }
 
-        // EditText references for location and description
+        // EditText references for location, description, and price
         val editTextLocation = findViewById<EditText>(R.id.editTextLocation)
         val editTextDescription = findViewById<EditText>(R.id.editTextDescription)
+        val editTextPrice = findViewById<EditText>(R.id.editTextPrice)  // New Price field
 
         // The "Save Place" button
         val savePlaceButton = findViewById<Button>(R.id.savePlaceButton)
         savePlaceButton.setOnClickListener {
             val location = editTextLocation.text.toString().trim()
             val description = editTextDescription.text.toString().trim()
+            val priceText = editTextPrice.text.toString().trim()
 
             // Check for empty fields
-            if (mainCategory.isEmpty() || selectedPlaceType.isEmpty()
-                || location.isEmpty() || description.isEmpty()) {
+            if (mainCategory.isEmpty() || selectedPlaceType.isEmpty() ||
+                location.isEmpty() || description.isEmpty() || priceText.isEmpty()
+            ) {
                 Toast.makeText(
                     this,
-                    "Please select category and place type, and enter location & description.",
+                    "Please select category and place type, and enter location, description & price.",
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
             }
 
+            // Convert the price to a Double
+            val price: Double = try {
+                priceText.toDouble()
+            } catch (e: NumberFormatException) {
+                Toast.makeText(this, "Invalid price", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            Log.d("HOST_PAGE_LAST", "Price parsed: $price")
+
             // Firebase Database reference
-            val database = FirebaseDatabase.getInstance(
-                "https://madproj-d74a3-default-rtdb.asia-southeast1.firebasedatabase.app/"
-            )
+            val database = FirebaseDatabase.getInstance("https://madproj-d74a3-default-rtdb.asia-southeast1.firebasedatabase.app/")
             val placesRef = database.getReference("places")
             val newPlaceRef = placesRef.push() // unique key
 
-            // Data to be saved
+            // Data to be saved; include the new "price" field
             val placeData = mapOf(
                 "userKey" to userKey,
                 "category" to mainCategory,        // from the first screen
-                "placeType" to selectedPlaceType,  // from this screen
+                "placeType" to selectedPlaceType,    // from this screen
                 "location" to location,
                 "description" to description,
+                "price" to price,                   // new price field
                 "timestamp" to System.currentTimeMillis()
             )
 
-            // Save the new place
             newPlaceRef.setValue(placeData)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Place created successfully", Toast.LENGTH_SHORT).show()
@@ -121,15 +140,10 @@ class host_page_last : AppCompatActivity() {
      */
     private fun updateCardSelection(selected: CardView, vararg others: CardView) {
         // Highlight the selected card
-        selected.setCardBackgroundColor(
-            ContextCompat.getColor(this, R.color.highlighted_color)
-        )
+        selected.setCardBackgroundColor(ContextCompat.getColor(this, R.color.highlighted_color))
         // Un-highlight the others
         for (other in others) {
-            other.setCardBackgroundColor(
-                ContextCompat.getColor(this, R.color.offwhite)
-            )
+            other.setCardBackgroundColor(ContextCompat.getColor(this, R.color.offwhite))
         }
     }
-
 }

@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".host_select_page">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
     <!-- Bottom "Go" button (optional usage) -->
     <Button
         android:id="@+id/button5"
@@ -27,7 +35,7 @@
         android:id="@+id/textView51"
         android:layout_width="311dp"
         android:layout_height="73dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="55dp"
         android:text="Which of these best\ndescribe your place?"
         android:textColor="@color/black"
         android:textSize="26dp"

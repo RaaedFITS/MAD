@@ -36,12 +36,20 @@
         <TextView
             android:id="@+id/create_account_link"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="460dp"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:text="Need a AirBuddy account?  Create an account"
-            android:textSize="15dp" />
+            android:textColor="@color/blue"
+            android:text="Need an AirBuddy account? Create an account"
+            android:textSize="15dp"
+            android:contentDescription="Tap to create an AirBuddy account"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:autoLink="web"
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/textView3"

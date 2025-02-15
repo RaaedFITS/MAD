@@ -307,6 +307,7 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/expand_more" />
                     </LinearLayout>
+
                     <!-- Section content (initially hidden) -->
                     <LinearLayout
                         android:id="@+id/contentPaymentPayouts"
@@ -440,6 +441,7 @@
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/blue"
                 android:textColor="@color/white" />
+
 
 
         </LinearLayout>

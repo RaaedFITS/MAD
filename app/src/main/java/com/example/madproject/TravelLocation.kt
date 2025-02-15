@@ -6,6 +6,7 @@ data class TravelLocation(
     val locationName: String = "",
     val rating: Double = 0.0,
     val description: String = "",
-    val imageRes: Int = 0 // <--- Add this field for a local drawable resource
+    val imageRes: Int = 0, // <--- Add this field for a local drawable resource
+    val price: Double = 0.0
 )
 

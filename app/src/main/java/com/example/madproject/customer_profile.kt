@@ -22,6 +22,9 @@ class customer_profile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         FirebaseApp.initializeApp(this)
         setContentView(R.layout.activity_customer_profile)
 
